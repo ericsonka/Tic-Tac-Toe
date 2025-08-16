@@ -4,13 +4,8 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html' // <-- make SPA, serve index.html for all routes
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/Tic-Tac-Toe' : ''
-		}
+			fallback: '200.html' // may differ from host to host
+		})
 	}
 };
 
