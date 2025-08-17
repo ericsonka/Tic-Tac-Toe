@@ -1,13 +1,10 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
+	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({
-			fallback: 'index.html'  // 👈 important for SPAs on GitHub Pages
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/Tic-Tac-Toe' : ''
-		}
+		adapter: adapter()
 	}
 };
 
